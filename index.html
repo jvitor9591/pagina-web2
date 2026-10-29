@@ -1,0 +1,141 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio Prático - Flexbox e Grid</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+        }
+
+        /* Cabeçalho fixo */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 40px;
+            background-color: #34495e;
+            color: white;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            z-index: 1000;
+        }
+
+        /* Menu lateral fixo à esquerda */
+        aside {
+            position: fixed;
+            top: 40px;
+            left: 0;
+            bottom: 40px;
+            width: 150px;
+            background-color: #34495e;
+            color: white;
+
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 15px;
+        }
+
+        aside a {
+            color: white;
+            text-decoration: none;
+            margin-bottom: 8px;
+        }
+
+        /* Conteúdo principal com CSS Grid */
+        main {
+            margin-top: 40px;
+            margin-left: 150px;
+            margin-bottom: 40px;
+            padding: 10px;
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, 100px);
+            gap: 10px;
+        }
+
+        /* Seis blocos da galeria */
+        .bloco {
+            background-color: #1abc9c;
+            color: white;
+            font-size: 20px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Rodapé fixo */
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 40px;
+            background-color: #34495e;
+            color: white;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Adaptação para telas pequenas */
+        @media (max-width: 600px) {
+            aside {
+                width: 100px;
+                padding: 10px;
+            }
+
+            main {
+                margin-left: 100px;
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(3, 100px);
+                gap: 6px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        Cabeçalho
+    </header>
+
+    <aside>
+        <a href="#">Menu</a>
+        <a href="#">Links</a>
+    </aside>
+
+    <main>
+        <div class="bloco">1</div>
+        <div class="bloco">2</div>
+        <div class="bloco">3</div>
+        <div class="bloco">4</div>
+        <div class="bloco">5</div>
+        <div class="bloco">6</div>
+    </main>
+
+    <footer>
+        Rodapé
+    </footer>
+
+</body>
+</html>
